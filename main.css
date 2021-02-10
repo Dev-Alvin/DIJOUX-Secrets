@@ -25,7 +25,6 @@ img {
 
 .grid-wrapper {
     display: grid;
-    /* grid-template-columns: 20rem 1fr; */
     grid-template-areas: 
         "sidebar master-header master-header master-header"
         "sidebar main-content main-content main-content"
@@ -35,8 +34,6 @@ img {
 
 .sidebar {
     grid-area: sidebar;
-    /* grid-column: 1/2;
-    grid-row: span 4; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,8 +57,6 @@ img {
 
 .master-header {
     grid-area: master-header;
-    /* grid-column: 2/-1; */
-    /* grid-row: span 1; */
     display: flex;
     align-items: center;
     animation: fade-in ease-in .5s;
@@ -108,8 +103,6 @@ img {
 }
 
 .main-content {
-    /* grid-column: 2/-1; */
-    /* grid-row: 2/4; */
     grid-area: main-content;
 }
 
@@ -177,20 +170,7 @@ img {
     opacity: 0;
     animation: fade-in ease-in .5s 2.5s forwards;
 }
-
-/* .rose {
-    width: 25rem;
-    position: absolute;
-    bottom: -3rem;
-    left: -15rem;
-    z-index: -1;
-    opacity: 1;
-    animation: fade-in ease-in .5s 3s forwards;
-} */
-
 .master-footer {
-    /* grid-column: 2/-1;
-    grid-row: 4/5; */
     grid-area: master-footer;
 }
 
@@ -239,13 +219,16 @@ span.selected {
     }
 }
 
+
 /* Mobile */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 940px) {
     .grid-wrapper {
         grid-template-areas: 
         "master-header"
         "main-content"
+        "master-footer"
         "master-footer";
+        grid-template-rows: 200px;
     }
     .nav-item {
         margin-left: 0.9rem;
@@ -255,6 +238,7 @@ span.selected {
         display: none;
     }
     .logo {
+        font-size: 2.0rem;
         margin-bottom: 5rem;
     }
     .description {
@@ -269,7 +253,7 @@ span.selected {
     }
     .item-title{
         text-align: center;
-        font-size: 8.6rem;
+        font-size: 5.0rem;
 
     }
     .main-nav {
@@ -277,17 +261,13 @@ span.selected {
     }
     .main-content .container {
         grid-template-columns: 1fr;
-    }
-    .image-wrapper::after {
-        display: none;
-        position: none;
+        grid-template-rows: 225px 350px;
     }
     .gold-ring{
         width: 23rem;
         display: block;
         margin-right: auto;
         margin-left: auto;
-        
     }
     .master-footer .container {
         display: flex;
